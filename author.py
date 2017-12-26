@@ -14,7 +14,6 @@ class Author():
         self.secrets = json.load(open('client_secrets.json'))['installed']
         
         try:
-            self.parameters = json.load(open('author.json', 'r'))
             self.load()
         except FileNotFoundError:
             self.do_flow(scope)
@@ -25,7 +24,7 @@ class Author():
         now = datetime.now()
         if self.params['expiry_date'] < now:
             self.refresh_token()
-        params['access_token'] = self.params['access_token']
+        params['access_token '] = self.params['access_token']
         return params
     
     def create_random_string(self):
@@ -79,7 +78,7 @@ class Author():
     
     def load(self):
         self.params = json.load(open('author.json', 'r'))
-        self.params['expiry_date'] = datetime.strptime(self.parameters['expiry_date'], '%Y-%m-%d %H:%M:%S.%f')
+        self.params['expiry_date'] = datetime.strptime(self.params['expiry_date'], '%Y-%m-%d %H:%M:%S.%f')
         return self.params
             
     def do_flow(self, scope):
