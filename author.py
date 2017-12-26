@@ -24,7 +24,7 @@ class Author():
         now = datetime.now()
         if self.params['expiry_date'] < now:
             self.refresh_token()
-        params['access_token '] = self.params['access_token']
+        params['access_token'] = self.params['access_token']
         return params
     
     def create_random_string(self):
