@@ -1,6 +1,6 @@
 client_secrets.json
 author.json
-
+/venv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
